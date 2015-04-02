@@ -1,5 +1,9 @@
 = render 'navbar'
 .container-fluid
+
+  %div
+    -if flash[:notice]
+      =flash[:notice]
   %h3 The Vision
   .col-md-6
     %p Our team's vision is a campus where cycling is an easy, simple, and convenient means of transportation.

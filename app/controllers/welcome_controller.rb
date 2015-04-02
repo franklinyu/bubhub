@@ -2,7 +2,8 @@ class WelcomeController < ApplicationController
 	def index
     @hilite = "index"
 		render
-	end
+	  flash[:notice]
+  end
 
 	def join
     @hilite = "join"

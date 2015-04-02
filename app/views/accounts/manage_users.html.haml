@@ -1,0 +1,29 @@
+//=stylesheet_link_tag "public/assets/stylesheets/accounts.css"
+%h1 MANAGE USERS
+%p=flash[:notice]
+%p=flash[:warning]
+%table
+  %thead
+    %tr
+      %th BU ID
+      %th pin
+      %th First Name
+      %th Last Name
+      %th Access Level
+      %th email
+      %th Created
+      %th Updated
+      %th Edit
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td=user.bu_id
+        %td=user.pin
+        %td=user.first_name
+        %td=user.last_name
+        %td=text_access_level(user.access_level)
+        %td=user.email
+        %td=user.created_at
+        %td=user.updated_at
+        %td
+          .editButton=button_to "Edit", manage_account_page_path(user.id), :method => :get

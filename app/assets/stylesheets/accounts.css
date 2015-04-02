@@ -1,0 +1,10 @@
+table, th, td {
+    text-align:center;
+    background-color: #00694e;
+    border: 1px solid black;
+    color: #ecf0f1;
+}
+.editButton{
+    color: #00694e;
+}
+

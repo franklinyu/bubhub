@@ -23,6 +23,4 @@
 # Textmate project files
 /*.tmproj
 
-
-
-
+/log
