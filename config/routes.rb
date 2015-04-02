@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/sign_in', to: "welcome#sign_in", as: :sign_in_page
   get '/invalid_user', to: "welcome#invalid_user", as: :invalid_user_page
   get '/valid_user', to: "welcome#valid_user", as: :valid_user_page
-	post '/', to: "user#create", as: :new_user_page  
+#post '/', to: "user#create", as: :new_user_page  
 	# Example of regular route:
   get '/register', to: "user#register", as: :register_page
   post '/register', to: "user#create", as: :new_user_page  
