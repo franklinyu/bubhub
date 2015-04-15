@@ -59,7 +59,7 @@ class WelcomeController < ApplicationController
         path = sign_in_page_path
       end
     end
-    redirect_to path
+    redirect_to path and return
   end
 
 end
