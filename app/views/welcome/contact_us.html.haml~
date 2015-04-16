@@ -19,7 +19,7 @@
       %br
       %message
         =label :welcome, :message, 'YOUR MESSAGE'
-        =text_area :welcome, :message
+        =text_field :welcome, :message
   %br    
   %div
     =submit_tag "Send"
