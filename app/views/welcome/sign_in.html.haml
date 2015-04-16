@@ -4,8 +4,11 @@
 %h1 Sign-In
 
 
-=form_tag invalid_user_page_path(@user), :method=>:get do
+
+=form_tag valid_user_page_path(@user), :method=>:get do
   .div1
+    -if flash[:notice]
+      =flash[:notice]
     %div
     = label :user, :login_name, 'User Name'
     .user-field
