@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+
 	def index
     @hilite = "index"
 		render
@@ -45,7 +46,7 @@ class WelcomeController < ApplicationController
     render
   end
 
-  def valid_user
+  def valid_user(user)
     path = sign_in_page_path
     @user_list = User.all
     first_name = params[:user][:first_name]
@@ -63,6 +64,10 @@ class WelcomeController < ApplicationController
     redirect_to path and return
   end
 
+  def failure
+    flash[:notice] = "Your username or password was incorrect. Try again."
+#redirect_to sign_in_page_path
+  end
 end
 
 
