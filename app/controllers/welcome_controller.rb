@@ -36,22 +36,22 @@ class WelcomeController < ApplicationController
 	end
 
     def contact_us_email_form
-      message_params = params['message_form']
+      message_params = params[:welcome]
       request.env['HTTP_REFERER'] ||= root_page_path
 
       if message_params.nil? or
-          message_params['name'].blank? or
-          message_params['email'].blank? or
-          message_params['message'].blank?
+          message_params[:name].blank? or
+          message_params[:email].blank? or
+          message_params[:message].blank?
         flash[:error] = "Please fill in Name, Email, and Message field"
         redirect_to contact_us_page_path and return
-      elsif !Devise.email_regexp.match(message_params['email'])
-        flash[:error] = "Please submit a valid email address"
-        redirect_to contact_us_page_path and return
-      elsif !message_params['fellforit'].blank?
+#elsif !Devise.email_regexp.match(message_params[:email])
+#        flash[:error] = "Please submit a valid email address"
+#        redirect_to contact_us_page_path and return
+      elsif !message_params[:fellforit].blank?
         flash[:error] = "Email not sent. Are you a human?"
         redirect_to contact_us_page_path and return
-      elsif Mailer.hire_me_form(User.find(message_params['recipient_id']), message_params).deliver
+      elsif Mailer.contact_us_email_form('bmei3@binghamton.edu', message_params).deliver
         flash[:notice] = "Your message has been sent successfully!"
         redirect_to contact_us_page_path and return
       else

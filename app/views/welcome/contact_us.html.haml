@@ -6,14 +6,16 @@
     %div
       -if flash[:error]
         =flash[:error]
-      -elsif flash[:notice]
+  .success_message
+    %div
+      -if flash[:notice]
         =flash[:notice]
   #information
     %p
       %a{:href => "mailto:binghamtonbikeshare@gmail.com"}Binghamton Bike Share Email
     %br
     
-    =form_tag contact_us_email_form_page_path, :id => 'contact_us_email_form', :method => :post, :action => 'contact_us_email_form' do
+    =form_tag contact_us_email_form_page_path, :id => 'contact_us_email_form', :method => :post, :action => 'contact_us_email_form_page' do
 
       .text
         %br
@@ -28,7 +30,7 @@
         %br
           =text_field :welcome, :fellforit, :id => 'f-fellforit', :placeholder => "How can we help you?"
         %br
-        =submit_tag "Send", :controller => 'welcome', :id => 'send'
+          =submit_tag "Send", :controller => 'welcome', :id => 'send'
     %br
     %strong Eboard
     %ul
