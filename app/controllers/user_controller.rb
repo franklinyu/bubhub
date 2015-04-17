@@ -21,6 +21,7 @@ class UserController < ApplicationController
   end
 
   def update
+    redirect_to root_page_path
   end
 
   def delete

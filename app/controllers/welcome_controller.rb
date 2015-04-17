@@ -46,6 +46,7 @@ class WelcomeController < ApplicationController
     render
   end
 
+<<<<<<< HEAD
   def valid_user(user)
     path = sign_in_page_path
     @user_list = User.all
@@ -67,6 +68,11 @@ class WelcomeController < ApplicationController
   def failure
     flash[:notice] = "Your username or password was incorrect. Try again."
 #redirect_to sign_in_page_path
+=======
+  def sign_in
+    #@user = User.find params[:id]
+    render
+>>>>>>> 615e2779df0e990f73e21354f679d6d7038e96d9
   end
 end
 

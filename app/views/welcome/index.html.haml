@@ -1,9 +1,10 @@
 = render 'navbar'
 .container-fluid
 
-  %div
-    -if flash[:notice]
-      =flash[:notice]
+  .success_message
+    %div
+      -if flash[:notice]
+        =flash[:notice]
   %h3 The Vision
   .col-md-6
     %p Our team's vision is a campus where cycling is an easy, simple, and convenient means of transportation.
@@ -13,7 +14,9 @@
     %button.btn.btn-success.btn-lg.btn-block
       = link_to "Sign-In", sign_in_page_path
     %br
-    %button.btn.btn-success.btn-lg.btn-block= link_to "Register", register_page_path
+    =link_to "Add a Rack", add_a_rack_page_path
+    %br
+    %button.btn.btn-success.btn-lg.btn-block= link_to "Register", new_user_path
   .col-md-12
     %hr
   .col-md-6

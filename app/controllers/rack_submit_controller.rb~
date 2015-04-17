@@ -1,0 +1,29 @@
+class RackController < ApplicationController
+  def create
+    if not (params[:rack][:location].present? and params[:rack][:num_bikes].present? and
+      params[:rack][:notes].present?)
+        flash[:error]= "Please fill in all required fields."
+        redirect_to add_a_rack_page_path and return
+    else
+      @rack = Rack.create!(rack_params)
+    end
+
+
+       
+   
+  end
+
+  def read
+  end
+
+  def update
+  end
+
+  def delete
+  end
+
+  def rack_params
+    params.require(:rack).permit(:location, :num_bikes, :notes)
+  end
+end
+

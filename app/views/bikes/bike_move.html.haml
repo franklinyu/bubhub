@@ -1,0 +1,23 @@
+.container-fluid
+%h2 Add bike
+= form_tag bike_moved_page_path, :method => :post, :action => "update" do
+	%h3 Bike:
+	%br 
+	= label :bike, :bike_id, 'id'
+	= text_field :bike, :bike_id
+	*
+	%br
+	<!--TODO: once locations are implemented change to a dropdown in which two of the options are
+	"repair" and "remove from circulation" respectively and the rest are location names.  At the
+	moment the user must enter a number to denote tack/repair status"-->
+	= label :bike, :location_id, 'location'
+	= text_field :bike, :location_id
+	%br
+	=submit_tag "Move", :controller => "bike", :action => "update", :method => "put", :class => "bike_moved"
+
+%div
+	-if flash[:error]
+		=flash[:error]
+%br 
+%br 
+%br 

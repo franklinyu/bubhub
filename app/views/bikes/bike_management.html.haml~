@@ -1,0 +1,13 @@
+=render 'navbar'
+.container-fluid
+%h2 Add bike
+= form_tag bike_list_page_path
+	= label :bike, :bike_id, 'id#'
+	= text_field :bike, :bike_id
+	=submit_tag "Create"
+
+
+%br 
+%br 
+%br 
+Note, this page is likely temporary and will be replaced with added functionality rendered to ~/bike_list/ when it is detected that the session's user is an admin

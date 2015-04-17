@@ -1,0 +1,26 @@
+.container-fluid
+%h2 Add bike
+= form_tag bike_add_page_path, :method => :post, :action => "create" do 
+	= label :bike, :bike_id, 'id'
+	= text_field :bike, :bike_id
+	*
+	%br
+	= label :bike, :bike_serial_num, 'serial #'
+	= text_field :bike, :bike_serial_num
+	*
+	%br
+	= label :bike, :bike_height, 'height (in)'
+	= text_field :bike, :bike_height
+	*
+	%br
+	= label :bike, :bike_description, 'description'
+	= text_field :bike, :bike_description
+	%br
+	=submit_tag "Create", :controller => "bike", :action => "create", :method => "put", :class => "bike_add"
+
+%div
+	-if flash[:error]
+		=flash[:error]
+%br 
+%br 
+%br 

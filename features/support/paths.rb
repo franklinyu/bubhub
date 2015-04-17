@@ -15,7 +15,12 @@ module NavigationHelpers
 
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
     when /^the movies page$/ then '/movies'
+<<<<<<< HEAD
     when /^\/valid_user$/ then '/valid_user'
+=======
+    when /^\/users\/new/ then new_user_path
+    when /^root page$/ then root_page_path
+>>>>>>> 615e2779df0e990f73e21354f679d6d7038e96d9
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

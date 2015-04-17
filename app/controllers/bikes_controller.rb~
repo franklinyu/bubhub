@@ -1,0 +1,41 @@
+class BikesController < ApplicationController
+
+	def bike_list
+		@bikes = Bike.all
+		render
+	end
+
+	def create
+
+		@bike = Bike.create!(params[:bike_id])
+		flash[:notice] = "Bike with id #{@bike.bike_id} created"
+		redirect_to bike_list_page_path and return
+
+	end
+
+	def update
+		@bike = Bike.find(params[:bike_id])
+		tester = @user.update_attributes!(params[:user].permit(:bike_id, :location_id))
+		if(tester)
+			flash[:notice] = "Bike #{@bike.bike_id} is now in the database, stored with the location #{@bike.bike_id}."
+		else
+			"An error occured and no changes were made to the database."
+		end
+		redirect_to bike_list_page_path
+	end
+
+
+	def creation_params
+		params.require(:bikes).permit(:bike_id)
+	end
+end
+	def bike_look_up
+		@bikes.each do |bike|
+			if bike.bike_id ==params[:bike_id]	
+				
+
+		
+			end
+		end
+	end
+		
