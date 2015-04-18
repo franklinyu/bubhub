@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150404022925) do
+ActiveRecord::Schema.define(version: 20150318054000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,13 @@ ActiveRecord::Schema.define(version: 20150404022925) do
   create_table "bikes", force: true do |t|
     t.string   "bike_id"
     t.string   "location_id"
+    t.string   "bike_serial_num"
+    t.string   "bike_height"
+    t.string   "bike_description"
+    t.string   "last_checkout_id"
+    t.datetime "last_checked_out"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "bike_serial_num",  limit: nil
-    t.string   "bike_height",      limit: nil
-    t.string   "bike_description", limit: nil
   end
 
   create_table "transactions", force: true do |t|
