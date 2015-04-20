@@ -1,0 +1,20 @@
+%h1 
+  = "Hi, " 
+  = session[user_name]
+-# talk to Jared to interface with this, get it from the session hash from the login page
+
+%div
+  %h3 
+    = "Assigned Bike: "
+  %h3
+    = "Total Ride Time: "
+  %h3
+    = "Total Number of Rides: "
+-# modify the user model to get these
+
+%div
+  %h4 Check In/ Out Bike
+  -# replace the above with %li = link_to "Check In/Out Bike", check_out_path
+%div
+  %h4 Help/ Instructions 
+  -# replace the above with %li = link_to "Help/Instructions", help_path
