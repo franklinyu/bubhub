@@ -56,6 +56,13 @@ When /^(?:|I )choose "([^"]*)"$/ do |field|
   choose(field)
 end
 
+When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |arg1, arg2|
+  fill_in arg1, :with => arg2
+end
+
+When /^(?:|I )click on "(.*?)"$/ do |arg1|
+  click(arg1)
+end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
