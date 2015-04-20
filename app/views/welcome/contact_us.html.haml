@@ -2,28 +2,36 @@
 .container-fluid
   #Contact_us_page
     %h3 Contact Us
+  .error_message
+    %div
+      -if flash[:error]
+        =flash[:error]
+  .success_message
+    %div
+      -if flash[:notice]
+        =flash[:notice]
   #information
     %p
       %a{:href => "mailto:binghamtonbikeshare@gmail.com"}Binghamton Bike Share Email
     %br
-    .text
-      %br
-        =label :welcome, :name, 'YOUR NAME (required)'
-        =text_field :welcome, :name 
-      %br
-        =label :welcome, :email, 'YOUR EMAIL (required)'
-        =email_field :welcome, :email
-      %br
-        =label :welcome, :subject, 'SUBJECT'
-        =text_field :welcome, :subject
-      %br
-      %message
-        =label :welcome, :message, 'YOUR MESSAGE'
-        =text_area :welcome, :message
-  %br    
-  %div
-    =submit_tag "Send"
-  %br
+    
+    =form_tag contact_us_email_form_page_path, :id => 'contact_us_email_form', :method => :post, :action => 'contact_us_email_form_page' do
+
+      .text
+        %br
+          =label :welcome, :name, 'YOUR NAME (required)'
+          =text_field :welcome, :name, :id => 'f-name', :placeholder => 'Name'
+        %br
+          =label :welcome, :email, 'YOUR EMAIL (required)'
+          =text_field :welcome, :email, :id => 'f-email', :placeholder => 'Email'
+        %br
+          =label :welcome, :message, 'YOUR MESSAGE'
+          =text_area :welcome,:message, :id => 'f-message', :placeholder => 'Message', :rows => 5
+        %br
+          =text_field :welcome, :fellforit, :id => 'f-fellforit', :placeholder => "How can we help you?"
+        %br
+          =submit_tag "Send", :controller => 'welcome', :id => 'send'
+    %br
     %strong Eboard
     %ul
       %p 
