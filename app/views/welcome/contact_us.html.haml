@@ -6,6 +6,24 @@
     %p
       %a{:href => "mailto:binghamtonbikeshare@gmail.com"}Binghamton Bike Share Email
     %br
+    .text
+      %br
+        =label :welcome, :name, 'YOUR NAME (required)'
+        =text_field :welcome, :name 
+      %br
+        =label :welcome, :email, 'YOUR EMAIL (required)'
+        =email_field :welcome, :email
+      %br
+        =label :welcome, :subject, 'SUBJECT'
+        =text_field :welcome, :subject
+      %br
+      %message
+        =label :welcome, :message, 'YOUR MESSAGE'
+        =text_field :welcome, :message
+  %br    
+  %div
+    =submit_tag "Send"
+  %br
     %strong Eboard
     %ul
       %p 
