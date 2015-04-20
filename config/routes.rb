@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/bike_management", to: "bikes#bike_management", as: :bike_management_page
     post '/bike_management', to: "bikes#create", as: :bike_add_page
   get "/bike_look_up", to: "bikes#bike_look_up", as: :bike_look_up_page
+    post "/bike_look_up", to: "bikes#look_up", as: :bike_find_page
   get '/manage_users', to: "accounts#manage_users", as: :manage_users_page
   get '/manage_account/:id', to: "accounts#manage_account", as: :manage_account_page
   put '/update_user/:id', to: "accounts#update", as: :update_user
