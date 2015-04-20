@@ -3,42 +3,35 @@
 
 %h1 Register with Bikeshare
 
-%div
-  -if flash[:error]
-    =flash[:error]
+.error_message
+  %div
+    -if flash[:error]
+      =flash[:error]
 
 All fields are required. Please make sure to complete all fields.
 
-= form_tag new_user_page_path, :method => :post, :action => "create" do
+= form_tag users_path,:id => "Registration Form", :method => :post, :action => "create" do
 
   .text
     %br 
-      = label :user, :firstName, 'First Name'
-      = text_field :user, :firstName
+      = label :user, :first_name, 'First Name'
+      = text_field :user, :first_name
 
     %br
-      = label :user, :lastName, 'Last Name'
-      = text_field :user, :lastName
+      = label :user, :last_name, 'Last Name'
+      = text_field :user, :last_name
 
     %br
-      = label :user, :bMail, 'BMail Address'
-      = email_field :user, :bMail
+      = label :user, :email, 'BMail Address'
+      = email_field :user, :email
 
     %br
-      = label :user, :BNumber, 'B-Number'
-      = text_field :user, :BNumber
+      = label :user, :bu_id, 'BU ID-Number'
+      = text_field :user, :bu_id
 
     %br
       = label :user, :pin, 'Pin Number'
       = text_field :user, :pin
-
-    %br
-      = label :user, :phoneNumber, 'Phone Number'
-      = telephone_field :user, :phoneNumber
-
-    %br
-      = label :user, :BUCardNumber, 'BU ID Card Number'
-      = text_field :user, :BUCardNumber
 
   %p
     %h3 BU Bikeshare Terms and Conditions
@@ -76,7 +69,7 @@ All fields are required. Please make sure to complete all fields.
     Article 2. Cyclist hereby acknowledges and agrees that Binghamton University is not responsible for the condition of the equipment; therefore, cyclist’s acceptance of the equipment on an “as is” basis. Binghamton University hereby disclaims any and all expressed and implied warranties, including without limitation those of fitness for intended use, and Binghamton University shall not be liable for consequential, incidental or indirect damages caused by the equipment of cyclist’s use thereof.
   
     %div 
-    =check_box_tag :terms, :style => "float:left;"
-    =label :terms, 'I Accept'
+    =check_box_tag "I Accept", :false, false, :style => "float:left;"
+    I Accept
     %div
     =submit_tag "Register", :controller => "user", :action => "create", :method => "put",:class => "register"

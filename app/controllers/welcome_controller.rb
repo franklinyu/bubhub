@@ -44,4 +44,9 @@ class WelcomeController < ApplicationController
     @hilite = "how_it_works"
     render
   end
+
+  def sign_in
+    #@user = User.find params[:id]
+    render
+  end
 end

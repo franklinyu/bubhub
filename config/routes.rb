@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  resources :users
+
   # You can have the root of your site routed with "root"
   root :to => 'welcome#index', as: :root_page
 
@@ -19,6 +21,20 @@ Rails.application.routes.draw do
   get '/manage_account/:id', to: "accounts#manage_account", as: :manage_account_page
   put '/update_user/:id', to: "accounts#update", as: :update_user
   # Example of regular route:
+  get '/sign_in', to: "welcome#sign_in", as: :sign_in_page
+  get '/invalid_user', to: "welcome#invalid_user", as: :invalid_user_page
+  get "/bike_list", to: "bikes#bike_list", as: :bike_list_page
+  get "/bike_management", to: "bikes#bike_management", as: :bike_management_page
+    post '/bike_management', to: "bikes#create", as: :bike_add_page
+  get "/bike_edit", to: "bikes#bike_edit", as: :bike_edit_page
+    post '/bike_edit', to: "bikes#update", as: :bike_edited_page
+  get "/bike_move", to: "bikes#bike_move", as: :bike_move_page
+    post "/bike_move", to: "bikes#update", as: :bike_moved_page
+  get "/bike_remove", to: "bikes#bike_remove" , as: :bike_remove_page
+    post "/bike_remove", to: "bikes#destroy", as: :bike_removed_page
+  get "/bike_look_up", to: "bikes#bike_look_up", as: :bike_look_up_page
+
+# Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

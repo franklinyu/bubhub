@@ -2,7 +2,10 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+<<<<<<< HEAD
 require 'factory_girl'
+=======
+>>>>>>> 615e2779df0e990f73e21354f679d6d7038e96d9
 require 'factory_girl_rails'
 require 'capybara/rspec'
 
