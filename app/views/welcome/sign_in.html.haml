@@ -17,7 +17,7 @@
     %div
     = label :user, :pin, "Password"
     .password-field
-    = text_field :user, 'pin'
+    = text_field :user, 'pin', :type=>"password"
   
     %div
     = link_to "Register", register_page_path
