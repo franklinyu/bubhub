@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/manage_users', to: "accounts#manage_users", as: :manage_users_page
   get '/manage_account/:id', to: "accounts#manage_account", as: :manage_account_page
   put '/update_user/:id', to: "accounts#update", as: :update_user
+  get '/userpanel', to: 'user#userpanel', as: :display_user_panel
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
