@@ -6,8 +6,8 @@ describe BikesController do
       @fake_bike = mock('bike 1')
     end
     it 'should check the database for the availability for the bike with model method' do
-      Transaction.stub(:is_logged_in?).and_return(true)
-      Bike.should_receive(:is_available?).with(@fake_bike).and_return(true)
+      Bike.should_receive(:find_by_bike_id).with(10).and_return(@fake_bike)
+      @fake_bike.should_receive(:is_available?).and_return(true)
       post :select, {bike_id: 10}
     end
     it 'should redirect user to the checkout page'
