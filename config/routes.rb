@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/manage_users', to: "accounts#manage_users", as: :manage_users_page
   get '/manage_account/:id', to: "accounts#manage_account", as: :manage_account_page
   put '/update_user/:id', to: "accounts#update", as: :update_user
-  get '/userpanel', to: 'user#userpanel', as: :display_user_panel
+  get '/userpanel', to: 'users#userpanel', as: :user_panel_page
   # Example of regular route:
   get '/sign_in', to: "welcome#sign_in", as: :sign_in_page
   get '/invalid_user', to: "welcome#invalid_user", as: :invalid_user_page

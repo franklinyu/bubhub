@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @user.email = params[:user][:email]
     @user.pin = params[:user][:pin]
 
+    @user.assigned_bike = params[:user][:assigned_bike]
+    @user.total_ride_time = params[:user][:total_ride_time]
+    @user.total_number_of_rides = params[:user][:total_number_of_rides]
+
     if @user.save
       @createdUser = User.find_by(bu_id: @user.bu_id)
       flash[:notice] = " An account for #{@createdUser.first_name} #{@createdUser.last_name} was successfully created"
@@ -31,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :bu_id, :pin)
+    params.require(:user).permit(:first_name, :last_name, :email, :bu_id, :pin, :assigned_bike, :total_ride_time, :total_number_of_rides)
   end
 
   def index
