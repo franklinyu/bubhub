@@ -33,6 +33,9 @@ Rails.application.routes.draw do
   get "/bike_remove", to: "bikes#bike_remove" , as: :bike_remove_page
     post "/bike_remove", to: "bikes#destroy", as: :bike_removed_page
   get "/bike_look_up", to: "bikes#bike_look_up", as: :bike_look_up_page
+  resources :bikes, only: [] do
+    post 'select', on: :member
+  end
 
 # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
