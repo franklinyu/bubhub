@@ -10,12 +10,12 @@
     -if flash[:notice]
       =flash[:notice]
     %div
-    = label :user, :login_name, 'User Name'
+    = label :user, :login_name, 'E-mail'
     .user-field
-    = text_field :user, 'first_name'
+    = text_field :user, 'email'
   
     %div
-    = label :user, :pin, "Password"
+    = label :user, :pin, "Pin"
     .password-field
     = text_field :user, 'pin', :type=>"password"
   
