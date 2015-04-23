@@ -34,7 +34,11 @@ Rails.application.routes.draw do
     post "/bike_remove", to: "bikes#destroy", as: :bike_removed_page
   get "/bike_look_up", to: "bikes#bike_look_up", as: :bike_look_up_page
   resources :bikes, only: [] do
-    post 'check_out', on: :member
+    member do
+      get 'check_out', to: :select
+      post 'check_out'
+    end
+    get 'invalid_selection', on: :collection
   end
 
 # Example of regular route:

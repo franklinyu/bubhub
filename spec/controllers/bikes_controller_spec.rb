@@ -8,19 +8,28 @@ describe BikesController do
     it 'should check the database for the availability for the bike with model method' do
       Bike.should_receive(:find_by_id).with(10).and_return(@fake_bike)
       @fake_bike.should_receive(:is_available?).and_return(true)
-      get :check_out, {id: 10}
+      get :select, {id: 10}
     end
-    describe 'after verification' do
+    describe 'on verification' do
       before :each do
         Bike.stub(:find_by_id).with(10).and_return(@fake_bike)
-        @fake_bike.stub(:is_available?).and_return(true)
-        get :check_out, {id: 10}
       end
-      it 'should select the Check Out template for rendering' do
-        response.should render_template('che_ckout')
+      it 'should redirect user to Invalid Selection Page for selection failure' do
+        @fake_bike.stub(:is_available?).and_return(false)
+        get :select, {id: 10}
+        response.should redirect_to invalid_selection_bikes_path
       end
-      it 'should make the bike information available for the checkout page template' do
-        assigns(:bike).should == @fake_bike
+      describe 'after verification' do
+        before :each do
+          @fake_bike.stub(:is_available?).and_return(true)
+          get :select, {id: 10}
+        end
+        it 'should select the Check Out template for rendering' do
+          response.should render_template('select')
+        end
+        it 'should make the bike information available for the checkout page template' do
+          assigns(:bike).should == @fake_bike
+        end
       end
     end
   end
