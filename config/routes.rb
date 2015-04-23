@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   # Example of regular route:
   get '/sign_in', to: "welcome#sign_in", as: :sign_in_page
   get '/invalid_user', to: "welcome#invalid_user", as: :invalid_user_page
-	post '/', to: "user#create", as: :new_user_page  
   get "/bike_list", to: "bikes#bike_list", as: :bike_list_page
   get "/bike_management", to: "bikes#bike_management", as: :bike_management_page
     post '/bike_management', to: "bikes#create", as: :bike_add_page
