@@ -1,0 +1,21 @@
+= render 'navbar'
+%h1 Add a Rack
+
+%div
+  -if flash[:error]
+    =flash[:error]
+
+= form_tag rack_create_page_path, :method => :post, :action => "create" do
+  %br
+    = label :bike_rack, :location, "Rack location: "
+    = text_field :bike_rack, :location
+  %br
+    = label :bike_rack, :num_bikes, "Number of Bikes"
+    = text_field :bike_rack, :num_bikes
+  %br
+    = label :bike_rack, :notes, "Extra notes about the bike."
+    = text_field :bike_rack, :note
+  %br
+  %INPUT{:TYPE => "SUBMIT", :controller => "bike_rack", :action => "create", :method => "put", :class => "submit"}
+  %INPUT{:TYPE => "RESET"}
+

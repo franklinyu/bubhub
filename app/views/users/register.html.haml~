@@ -9,7 +9,7 @@
 
 All fields are required. Please make sure to complete all fields.
 
-= form_tag new_user_page_path, :method => :post, :action => "create"
+= form_tag new_user_page_path, :method => :post, :action => "create" do
 
   .text
     %br 
