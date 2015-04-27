@@ -1,0 +1,24 @@
+= render 'navbar'
+.container-fluid
+
+  %div
+    -if flash[:notice]
+      =flash[:notice]
+  %h3 The Vision
+  .col-md-6
+    %p Our team's vision is a campus where cycling is an easy, simple, and convenient means of transportation.
+    %p We envision a Bike Share program where free bikes can be borrowed all over campus. The Bike Share has seen a tremendous support from all over campus, with hundreds of hours of use. We hope that our team's progress means less bikes will rust away outside the lecture hall with no one coming back for them.
+    %p Happy Cycling!
+  .col-md-6
+    %button.btn.btn-success.btn-lg.btn-block Sign-In
+    %br
+    =link_to "Add a Rack", add_a_rack_page_path	
+    =link_to "Check", rack_submit_page_path
+    %br
+    %button.btn.btn-success.btn-lg.btn-block= link_to "Register", register_page_path
+  .col-md-12
+    %hr
+  .col-md-6
+    =image_tag "http://placeharold.com/500/500"
+  .col-md-6
+    =image_tag "bike_share1.png"

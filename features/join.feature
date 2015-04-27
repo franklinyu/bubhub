@@ -7,6 +7,6 @@ Background:
 	Given I am on /join
 	
 Scenario: Content for Join BikeShare page 
-	Then I should see "Join the Team!" 
-	Then I should see "Mondays at 9:15 PM in APP 111"
-	Then I should see the image "Bike_Share_Team.jpg"
+	Then I should see "Rack location:"
+	Then I should see "Number of Bikes"
+	Then I should see "Extra notes about the bike."

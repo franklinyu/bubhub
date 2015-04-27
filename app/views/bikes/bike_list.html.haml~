@@ -1,0 +1,35 @@
+<<<<<<< HEAD
+=render 'navbar'
+.container-fluid
+%h1 All bikes
+%p=flash[:notice]
+%p=flash[:warning]
+<!-- TODO: change table to bootstrap table because this one looks bad-->
+%table#bikes
+	%thead
+		%tr
+			%th Bike Id
+			%th Location
+			%th 
+=======
+.container-fluid
+	#Contact_us_page
+		%h1 All bikes
+%table#bikes
+	%thead
+		%tr
+			%th bike id
+			%th location
+			%th button here
+>>>>>>> dad788c548a380dfef51bd9d82ce27956b654f71
+	%tbody
+		- @bikes.each do |bike|
+			%tr
+				%td= bike.bike_id
+				%td= bike.location_id
+<<<<<<< HEAD
+				%td= button_to "Bike Page"
+=======
+				%td 
+					=button_to "Edit", manage_account_page_path(user.id), :method => :get
+>>>>>>> dad788c548a380dfef51bd9d82ce27956b654f71

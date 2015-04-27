@@ -1,0 +1,9 @@
+=render "navbar"
+.container-fluid
+%h1 Bike Look Up
+= form_tag bike_look_up_page_path, :method => :post, :action => "bike_look_up" do
+	Enter Bike ID Number
+	= text_field :bike, :bike_id
+	=submit_tag "Look Up", :controller => "bike", :action => "bike_look_up", :method => "put",:class => "bike_look_up"
+%br
+%a{:href=>"/bike_list"}List of all Bikes

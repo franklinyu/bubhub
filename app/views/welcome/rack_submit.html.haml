@@ -1,0 +1,6 @@
+= render 'navbar'
+.container-fluid
+
+  %div
+    -if flash[:notice]
+      =flash[:notice]
