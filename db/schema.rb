@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(version: 20150414053429) do
   create_table "bikes", force: true do |t|
     t.string   "bike_id"
     t.string   "location_id"
+    t.string   "bike_serial_num"
+    t.string   "bike_height"
+    t.string   "bike_description"
+    t.string   "last_checkout_id"
+    t.datetime "last_checked_out"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
