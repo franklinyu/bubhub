@@ -120,6 +120,9 @@ class BikesController < ApplicationController
       redirect_to invalid_selection_bikes_path
     end
   end
+
+  def invalid_selection
+  end
 end
 
 		
