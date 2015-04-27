@@ -3,7 +3,7 @@ require 'spec_helper'
 describe BikesController do
   describe 'check out a bike' do
     before :each do
-      @fake_bike = mock('bike 1')
+      @fake_bike = double('bike 1')
     end
     it 'should check the database for the availability for the bike with model method' do
       Bike.should_receive(:find_by_id).with(10).and_return(@fake_bike)
