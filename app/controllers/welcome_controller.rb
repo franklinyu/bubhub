@@ -49,12 +49,15 @@ class WelcomeController < ApplicationController
   def valid_user
     path = sign_in_page_path
     @user_list = User.all
-    first_name = params[:user][:first_name]
-    session[:user_name] = first_name
+    email = params[:user][:email]
+    pw = params[:user][:pin]
+    session[:email] = email
     params.permit!
     @user_list.each do |u|
-      if first_name == u[:first_name]
+      if email == u[:email] and pw == u[:pin]
         path = valid_user_page_path
+        session[:first_name] = u[:first_name]
+        session[:last_name] = u[:last_name]
         return
       else
         flash[:notice] = "Your username or password was incorrect. Try again."
