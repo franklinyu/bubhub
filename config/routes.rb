@@ -40,6 +40,10 @@ Rails.application.routes.draw do
     end
     get 'invalid_selection', on: :collection
   end
+  resource :json, only: [] do
+    post 'sign_out'
+    post 'sign_in'
+  end
 
 # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
