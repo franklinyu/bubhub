@@ -26,15 +26,19 @@ class UsersController < ApplicationController
   end
 
   def update
+    redirect_to root_page_path
   end
 
   def delete
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :bu_id, :pin)
+    params.require(:user).permit(:firstName, :lastName, :bMail, :BNumber, :pin, :phoneNumber, :BUCardNumber)
   end
 
+  def register
+    render "register"
+  end
   def index
     render "register"
   end

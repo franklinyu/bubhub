@@ -1,0 +1,29 @@
+.container-fluid
+%h1 Available bikes
+<!-- TODO: change table to bootstrap table because this one looks bad -->
+<!-- TODO: once locations are properly implemented have a seprate location for each table-->
+%table#bikes
+	%thead
+		%tr
+			%th Bike Id
+			%th Location
+			%th Height
+			%th
+	%tbody
+		- @bikes.each do |bike|
+			-if (bike.location_id != "0" && bike.location_id != "-1")
+				%tr
+					%td= bike.bike_id
+					%td= bike.location_id
+					%td= bike.bike_height
+					%td= button_to "Bike Page"
+<!-- TODO: blanket true to be replaced with admin detection -->
+-if(true)
+	%br
+	%br
+	%b Admin Panel
+	%br
+	%td= button_to "Add", bike_management_page_path, :class => "button", :method => :get
+	%td= button_to "Edit", bike_edit_page_path, :class => "button", :method => :get
+	%td= button_to "Move/Repair", bike_move_page_path, :class => "button", :method => :get
+	%td= button_to "Remove", bike_remove_page_path, :class => "button", :method => :get
