@@ -5,7 +5,8 @@ class JsonsController < ApplicationController
 
   def sign_in
     debugger
-    1 + 1
+    @response = {authorized: true, is_admin: true}
+    render json: @response
   end
 
 protected
