@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       @createdUser = User.find_by(bu_id: @user.bu_id)
       flash[:notice] = " An account for #{@createdUser.first_name} #{@createdUser.last_name} was successfully created"
-      UserMailer.welcome_email(@user).deliver
+      UserMailer.welcome_email(@user).deliver_later
       #Mailer.welcome_email(@user).deliver
       redirect_to root_page_path and return
     else
@@ -27,19 +27,15 @@ class UsersController < ApplicationController
   end
 
   def update
-    redirect_to root_page_path
   end
 
   def delete
   end
 
   def user_params
-    params.require(:user).permit(:firstName, :lastName, :bMail, :BNumber, :pin, :phoneNumber, :BUCardNumber)
+    params.require(:user).permit(:first_name, :last_name, :email, :bu_id, :pin)
   end
 
-  def register
-    render "register"
-  end
   def index
     render "register"
   end
