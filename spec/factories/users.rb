@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 require 'faker'
 
-FactoryGirl.define do
-  factory :user do |f|
-    f.firstName { Faker::Name.first_name }
-    f.lastName { Faker::Name.last_name }
-=======
 #spec/factories/users.rb
 
 FactoryGirl.define do
@@ -20,6 +14,5 @@ FactoryGirl.define do
   end
   factory :invalid_user, parent: :user do |u|
     u.first_name{nil}
->>>>>>> 615e2779df0e990f73e21354f679d6d7038e96d9
   end
 end
