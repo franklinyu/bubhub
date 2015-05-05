@@ -19,6 +19,7 @@ module NavigationHelpers
     when /^root page$/ then root_page_path
     when /^Checkout Page$/ then check_out_bike_path
     when /^Invalid Selection [Pp]age$/ then invalid_selection_bikes_path
+    when /^\/valid_user$/ then '/sign_in'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
