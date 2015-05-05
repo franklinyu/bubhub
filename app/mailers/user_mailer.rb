@@ -1,9 +1,9 @@
 # app/mailers/user_mailer.rb
-class UserMailer < ApplicationMailer
+class UserMailer < ActionMailer::Base
 
 @from_bikeshare = 'donotreplybubikeshare@gmail.com'
 @send_to_bikeshare = 'meibenny@gmail.com'
-default from: @bikeshare_email
+default from: @from_bikeshare
 
  
   def welcome_email(user)
