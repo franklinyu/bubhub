@@ -3,22 +3,25 @@
 
 %h1 Sign-In
 
-= form_tag invalid_user_page_path, :method => :get do
 
+
+=form_tag valid_user_page_path, :method=>:get do
   .div1
+    -if flash[:notice]
+      =flash[:notice]
     %div
-    = label :user, :user_name, 'User Name'
+    = label :user, :login_name, 'E-mail'
     .user-field
-    = text_field :user, 'user name'
-
+    = text_field :user, 'email'
+  
     %div
-    = label :user, :password, "Password"
+    = label :user, :pin, "Pin"
     .password-field
-    = text_field :user, 'password'
-
+    = text_field :user, 'pin', :type=>"password"
+  
     %div
-    = link_to "Register", register_page_path
+    = link_to "Register", new_user_path
     %div
-    = submit_tag 'Sign-In'
+    = submit_tag "Sign-In"
 
 =link_to "Back to Home", index_page_path
