@@ -1,3 +1,5 @@
+require 'faker'
+
 #spec/factories/users.rb
 
 FactoryGirl.define do

@@ -29,9 +29,6 @@ ActiveRecord::Schema.define(version: 20150414053429) do
     t.string   "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "bike_serial_num",  limit: nil
-    t.string   "bike_height",      limit: nil
-    t.string   "bike_description", limit: nil
   end
 
   create_table "transactions", force: true do |t|
