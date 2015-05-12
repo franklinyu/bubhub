@@ -14,7 +14,7 @@ default from: @from_bikeshare
   def contact_us_email(contact_us_email_form)
     @form = contact_us_email_form
     subject = ['message from', @form[:name]].join(' ')
-    mail(to: @send_to_bikeshare, from: @from_bikeshare, subject: subject)
+    mail(to: @send_to_bikeshare, subject: subject)
 
   end
 end
