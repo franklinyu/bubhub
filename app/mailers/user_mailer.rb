@@ -8,12 +8,10 @@ default from: @from_bikeshare
  
   def welcome_email(user)
     @user = user
-    #@url  = 'http://example.com/login'
     mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
 
-  def contact_us_email_form(user, contact_us_email_form)
-    @user = user
+  def contact_us_email_form(contact_us_email_form)
     @form = contact_us_email_form
     subject = ['message from', @form[:name]].join(' ')
     mail(to: @send_to_bikeshare, reply_to: @form[:email], from: @form[:email], subject: subject)

@@ -11,7 +11,6 @@ class UsersController < ApplicationController
       @createdUser = User.find_by(bu_id: @user.bu_id)
       flash[:notice] = " An account for #{@createdUser.first_name} #{@createdUser.last_name} was successfully created"
       UserMailer.welcome_email(@user).deliver
-      #Mailer.welcome_email(@user).deliver
       redirect_to root_page_path and return
     else
       flash[:error]= "Please fill in all required fields."

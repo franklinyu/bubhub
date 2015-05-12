@@ -19,16 +19,16 @@
 
       .text
         %br
-          =label :welcome, :name, 'YOUR NAME (required)'
-          =text_field :welcome, :name, :id => 'f-name', :placeholder => 'Name'
+          =label :email_form, :name, 'YOUR NAME (required)'
+          =text_field :email_form, :name, :placeholder => 'Name'
         %br
-          =label :welcome, :email, 'YOUR EMAIL (required)'
-          =text_field :welcome, :email, :id => 'f-email', :placeholder => 'Email'
+          =label :email_form, :email, 'YOUR EMAIL (required)'
+          =text_field :email_form, :email, :placeholder => 'Email'
         %br
-          =label :welcome, :message, 'YOUR MESSAGE'
-          =text_area :welcome,:message, :id => 'f-message', :placeholder => 'Message', :rows => 5
+          =label :email_form, :message, 'YOUR MESSAGE'
+          =text_area :email_form,:message, :placeholder => 'Message', :rows => 5
         %br
-          =text_field :welcome, :fellforit, :id => 'f-fellforit', :placeholder => "How can we help you?"
+          =text_field :email_form, :fellforit, :id => 'f-fellforit', :placeholder => "How can we help you?"
         %br
           =submit_tag "Send", :controller => 'welcome', :id => 'send'
     %br
