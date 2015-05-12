@@ -11,10 +11,10 @@ default from: @from_bikeshare
     mail(to: @user.email, subject: 'Welcome to My Awesome Site')
   end
 
-  def contact_us_email_form(contact_us_email_form)
+  def contact_us_email(contact_us_email_form)
     @form = contact_us_email_form
     subject = ['message from', @form[:name]].join(' ')
-    mail(to: @send_to_bikeshare, reply_to: @form[:email], from: @form[:email], subject: subject)
+    mail(to: @send_to_bikeshare, subject: subject)
 
   end
 end

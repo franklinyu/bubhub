@@ -49,7 +49,7 @@ class WelcomeController < ApplicationController
       elsif !@message_params[:fellforit].blank?
         flash[:error] = "Email not sent. Are you a human?"
         redirect_to contact_us_page_path and return
-      elsif UserMailer.contact_us_email_form(@message_params).deliver
+      elsif UserMailer.contact_us_email(@message_params).deliver
         flash[:notice] = "Your message has been sent successfully!"
         redirect_to contact_us_page_path and return
       else

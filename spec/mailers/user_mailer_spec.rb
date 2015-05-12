@@ -13,5 +13,11 @@ describe UserMailer do
       expect(mail.subject).to include ('Welcome to My Awesome Site')
     end
   end
+  describe '#contact_us_email' do
+    message_params[:name] = 'Benny'
+    message_params[:email] = 'meibenny@gmail.com'
+    message_params[:message] = 'Hello! Good to see you!'
+    mail = UserMailer.contact_us_email
+  end
 end
 
