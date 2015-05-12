@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/ambethia/recaptcha.git
+  revision: 4145a08a518f5ce205dcddf9b0be5b21440b4f01
+  specs:
+    recaptcha (0.4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -183,6 +189,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.1.5)
+  recaptcha!
   rspec-rails (~> 2.99.0)
   sdoc (~> 0.4.0)
   spring
