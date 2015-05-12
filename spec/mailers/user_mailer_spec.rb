@@ -14,10 +14,16 @@ describe UserMailer do
     end
   end
   describe '#contact_us_email' do
-    message_params[:name] = 'Benny'
-    message_params[:email] = 'meibenny@gmail.com'
-    message_params[:message] = 'Hello! Good to see you!'
-    mail = UserMailer.contact_us_email
+    before(:each) do
+      @from_bikeshare = 'donotreplybubikeshare@gmail.com'
+      @message_params = Hash.new({:name => "Benny", 
+                                  :email => "meibenny@gmail.com", 
+                                  :message => "Hi there! Good to see you!"
+                                 })
+    end
+    it 'should send an email to bikeshare' do
+      mail = UserMailer.contact_us_email(@message_params)
+      expect(mail.from).to include (@from_bikeshare)
+    end
   end
 end
-
