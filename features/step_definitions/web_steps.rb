@@ -56,6 +56,9 @@ When /^(?:|I )choose "([^"]*)"$/ do |field|
   choose(field)
 end
 
+When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|
+  fill_in(field, :with=>value)
+end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
@@ -103,10 +106,6 @@ end
 
 Given(/^I am on \/add_a_rack$/) do
   visit(add_a_rack) # express the regexp above with the code you wish you had
-end
-
-Then(/^I should see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
 end
 
 Then /^the checkbox "(.+)" should be unchecked$/ do |checkbox|

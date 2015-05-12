@@ -35,6 +35,7 @@ group :test do
   gem 'capybara' # Simulates user actions for cucumber
   gem 'cucumber-rails', :require => false # Cucmber features
   gem 'database_cleaner'  # Provides strategies for cleaning up the test db after test runs
+  gem 'rspec-rails', '~> 2.99.0'  #Stick to a pre 3.x version for learning experience
   gem 'factory_girl_rails'
   gem 'faker'
 
@@ -46,8 +47,6 @@ end
 
 group :production do
   gem 'unicorn'
-end
-group :development, :test do
 end
 
 # Use ActiveModel has_secure_password
