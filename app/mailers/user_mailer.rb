@@ -2,7 +2,6 @@
 class UserMailer < ActionMailer::Base
 
 @from_bikeshare = 'donotreplybubikeshare@gmail.com'
-@send_to_bikeshare = 'meibenny@gmail.com'
 default from: @from_bikeshare
 
  
@@ -13,8 +12,9 @@ default from: @from_bikeshare
 
   def contact_us_email(contact_us_email_form)
     @form = contact_us_email_form
+    @send_to_bikeshare = 'binghamtonbikeshare@gmail.com'
     subject = ['message from', @form[:name]].join(' ')
-    mail(to: @send_to_bikeshare, subject: subject)
+    mail(to: @send_to_bikeshare, subject: subject, cc: @form[:email], reply_to: @form[:email])
 
   end
 end
