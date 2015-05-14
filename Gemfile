@@ -32,7 +32,8 @@ gem 'spring',        group: :development
 gem 'haml'
 
 
-gem "recaptcha", :require => "recaptcha/rails", :git => 'https://github.com/ambethia/recaptcha.git'
+gem "recaptcha", require: "recaptcha/rails", github: "ambethia/recaptcha"
+
 group :test do
   gem 'capybara' # Simulates user actions for cucumber
   gem 'cucumber-rails', :require => false # Cucmber features

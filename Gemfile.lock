@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/ambethia/recaptcha.git
+  remote: git://github.com/ambethia/recaptcha.git
   revision: 4145a08a518f5ce205dcddf9b0be5b21440b4f01
   specs:
     recaptcha (0.4.0)
