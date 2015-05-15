@@ -71,5 +71,9 @@ All fields are required. Please make sure to complete all fields.
     %div 
     =check_box_tag "I Accept", :false, false, :style => "float:left;"
     I Accept
+
+    %div
+    =recaptcha_tags :ssl => true, :id => "captcha"
+
     %div
     =submit_tag "Register", :controller => "users", :action => "create", :method => "put",:class => "register"

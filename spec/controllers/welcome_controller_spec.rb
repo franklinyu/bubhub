@@ -2,21 +2,14 @@ require 'spec_helper'
 
 describe WelcomeController do
   before :each do
-    @user = User.new
-    @user.firstName = "Kyle"
-    @user.lastName = "Goodwill"
+    @user = FactoryGirl.create(:user)
   end
 
-  describe "valid_user", pending=>true do
+  describe "#valid_user" do
     context "with valid attributes" do
-      it "creates a list of users in database" do
-        user = FactoryGirl.create(:user, user: some_user)
+      it "redirects to the valid user page" do
         get :index
-        assigns(:users).should eq([user])
-      end
-      it "redirects to the valid user page", pending=>true do
-        get :index
-        controller.valid_user(@user)
+        WelcomeController.valid_user
         expect(response).to redirect_to valid_user_page_path
       end
     end

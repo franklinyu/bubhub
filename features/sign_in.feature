@@ -12,4 +12,8 @@ Scenario: Sign-In Button
   And I press "Sign-In"
   Then I should be on /valid_user
   
-
+Scenario: Invalid login
+  And I fill in "user[email]" with "invalid_user@gmail.com"
+  And I fill in "user[pin]" with "0000"
+  And I press "Sign-In"
+  Then I am on /sign_in
