@@ -38,6 +38,13 @@ Rails.application.routes.draw do
   get "/bike_remove", to: "bikes#bike_remove" , as: :bike_remove_page
     post "/bike_remove", to: "bikes#destroy", as: :bike_removed_page
   get "/bike_look_up", to: "bikes#bike_look_up", as: :bike_look_up_page
+  resources :bikes, only: [] do
+    member do
+      get 'check_out', to: :select
+      post 'check_out'
+    end
+    get 'invalid_selection', on: :collection
+  end
   get '/add_favorites', to: 'bikes#add_favorites', as: :add_to_favorites_page
     post '/add_favorites', to: 'bikes#favorites', as: :add_favorites_page
 

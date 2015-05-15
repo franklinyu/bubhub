@@ -114,6 +114,16 @@ class BikesController < ApplicationController
 		redirect_to bike_look_up_page_path and return
 	end
 
+  def select
+    @bike = Bike.find_by_id(params[:id].to_i)
+    if @bike == nil or not @bike.is_available?
+      redirect_to invalid_selection_bikes_path
+    end
+  end
+
+  def invalid_selection
+  end
+
   def favorites
     render "add_favorites"  
   end
