@@ -113,6 +113,8 @@ class BikesController < ApplicationController
 		end
 		redirect_to bike_look_up_page_path and return
 	end
-end
 
-		
+  def favorites
+    render "add_favorites"  
+  end
+end		
