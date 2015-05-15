@@ -33,7 +33,8 @@ Scenario: Display user account registration fields
     Then I should see "Article 2. Cyclist hereby acknowledges and agrees that Binghamton University is not responsible for the condition of the equipment; therefore, cyclist’s acceptance of the equipment on an “as is” basis. Binghamton University hereby disclaims any and all expressed and implied warranties, including without limitation those of fitness for intended use, and Binghamton University shall not be liable for consequential, incidental or indirect damages caused by the equipment of cyclist’s use thereof."
     Then the checkbox "I Accept" should be unchecked
     Then I should see "I Accept"
-    
+    Then I should see id "div#captcha"
+
 Scenario: Display the register button
     When I check "I Accept"
     Then I should see the "Register" button

@@ -73,7 +73,7 @@ All fields are required. Please make sure to complete all fields.
     I Accept
 
     %div
-    =recaptcha_tags :ssl => true
+    =recaptcha_tags :ssl => true, :id => "captcha"
 
     %div
     =submit_tag "Register", :controller => "users", :action => "create", :method => "put",:class => "register"
