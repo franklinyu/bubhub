@@ -17,8 +17,11 @@ module NavigationHelpers
     when /^the movies page$/ then '/movies'
     when /^\/users\/new/ then new_user_path
     when /^root page$/ then root_page_path
+# begin: I have no idea what is this; this is kept when solving merge conflicts
+#        brought by Jared Langenauer (https://github.com/jaredlangen)
     when /^Checkout Page$/ then check_out_bike_path
     when /^Invalid Selection [Pp]age$/ then invalid_selection_bikes_path
+# end
     when /^\/valid_user$/ then '/sign_in'
 
     # Add more mappings here.
