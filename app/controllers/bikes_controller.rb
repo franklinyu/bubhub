@@ -123,7 +123,6 @@ class BikesController < ApplicationController
 
   def invalid_selection
   end
-end
 
   def favorites
     render "add_favorites"  
