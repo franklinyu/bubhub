@@ -32,3 +32,6 @@
 #ignore mailer password files
 /config/email.yml
 /config/initializers/setup_mail.rb
+
+# ignore database schema
+/db/schema.rb
