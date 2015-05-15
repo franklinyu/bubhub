@@ -45,6 +45,8 @@ Rails.application.routes.draw do
     end
     get 'invalid_selection', on: :collection
   end
+  get '/add_favorites', to: 'bikes#add_favorites', as: :add_to_favorites_page
+    post '/add_favorites', to: 'bikes#favorites', as: :add_favorites_page
 
 # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
