@@ -11,8 +11,7 @@ describe WelcomeController do
       it "redirects to the valid user page" do
         get :index
 #WelcomeController.valid_users(@user)
-#expect(response).to redirect_to valid_user_page_path
-        assert true
+        expect(response.code).to eq('200')
       end
     end
     context "with invalid attributes" do
@@ -21,8 +20,7 @@ describe WelcomeController do
 #controller.valid_user(:user)
 #expect(flash[:notice]).to eq "Your username or password was incorrect. Try again."
 #WelcomeController.valid_users(@user)
-#expect(response).to redirect_to sign_in_page_path
-        assert true
+        expect(response.code).to eq('200')
       end
     end
   end
