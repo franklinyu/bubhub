@@ -1,0 +1,21 @@
+require 'spec_helper'
+
+describe UserController do
+  describe 'register page for bikeshare' do
+    it 'When I go to the register page for the bikeshare, it should be possible to create an account' do
+      user = double('User')
+      user.stub!(:firstName)
+      user.stub!(:lastName)
+      user.stub!(:bMail)
+      user.stub!(:BNumber)
+      user.stub!(:pin)
+      user.stub!(:phoneNumber)
+      user.stub!(:BUCardNumber)
+      
+      User.should_receive(:create!).and_return(user)
+      post :create, {:user => user}
+      response.should redirect_to(root_page_path)
+    end
+  end
+end
+      
