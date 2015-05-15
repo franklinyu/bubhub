@@ -125,4 +125,7 @@ class BikesController < ApplicationController
   end
 end
 
-		
+  def favorites
+    render "add_favorites"  
+  end
+end		
