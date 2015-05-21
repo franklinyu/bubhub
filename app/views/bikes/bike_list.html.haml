@@ -16,7 +16,7 @@
 					%td= bike.bike_id
 					%td= bike.location_id
 					%td= bike.bike_height
-					%td= button_to "Bike Page"
+					%td= button_to "Add as Favorite", add_favorites_page_path, :class => "button"
 <!-- TODO: blanket true to be replaced with admin detection -->
 -if(true)
 	%br
