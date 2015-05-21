@@ -61,7 +61,7 @@ When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |arg1, arg2|
 end
 
 When /^(?:|I )click on "(.*?)"$/ do |arg1|
-  click(arg1)
+  pending
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
@@ -95,7 +95,6 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
   end
 end
 
-
 Then /^show me the page$/ do
   save_and_open_page
 end
@@ -107,3 +106,10 @@ Then /^I should see the image "(.+)"$/ do |image|
         assert page.has_selector?("img[src$='#{image}']") 
     end
 end
+
+Then(/^bike should be marked out for maintenence$/) do
+  bike = Bike.create!( bike_id: '1', location_id: '1' )
+  bike.setOutForMaintence
+end
+
+

@@ -34,6 +34,7 @@ gem 'haml'
 group :test do
   gem 'capybara' # Simulates user actions for cucumber
   gem 'cucumber-rails', :require => false # Cucmber features
+  gem 'rspec-rails', '~> 3.0'
   gem 'database_cleaner'  # Provides strategies for cleaning up the test db after test runs
 end
 
