@@ -7,9 +7,11 @@ class UsersController < ApplicationController
     @user.email = params[:user][:email]
     @user.pin = params[:user][:pin]
 
+#if verify_recaptcha(model: @user, message: "Oh! It's error with reCAPTCHA!") && @user.save
     if @user.save
       @createdUser = User.find_by(bu_id: @user.bu_id)
       flash[:notice] = " An account for #{@createdUser.first_name} #{@createdUser.last_name} was successfully created"
+      UserMailer.welcome_email(@user).deliver
       redirect_to root_page_path and return
     else
       flash[:error]= "Please fill in all required fields."

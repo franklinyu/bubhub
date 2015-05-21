@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   get '/resources', to: 'welcome#resources', as: :resources_page
   get '/bike_shop_info', to: 'welcome#bike_shop_info', as: :bike_shop_info_page
   get '/how_it_works', to: "welcome#how_it_works", as: :how_it_works_page
+
+  get '/valid_user', to: "welcome#valid_user", as: :valid_user_page
+#post '/', to: "user#create", as: :new_user_page  
+	# Example of regular route:
   get '/add_a_rack', to: "bike_rack#add_a_rack", as: :add_a_rack_page
   post '/add_a_rack', to: "bike_rack#create", as: :rack_create_page
   get '/register', to: "user#register", as: :register_page
@@ -20,6 +24,7 @@ Rails.application.routes.draw do
   get '/manage_users', to: "accounts#manage_users", as: :manage_users_page
   get '/manage_account/:id', to: "accounts#manage_account", as: :manage_account_page
   put '/update_user/:id', to: "accounts#update", as: :update_user
+  post '/contact_us', to: "welcome#contact_us_email_form", as: :contact_us_email_form_page
   # Example of regular route:
   get '/sign_in', to: "welcome#sign_in", as: :sign_in_page
   get '/invalid_user', to: "welcome#invalid_user", as: :invalid_user_page
@@ -40,6 +45,8 @@ Rails.application.routes.draw do
     end
     get 'invalid_selection', on: :collection
   end
+  get '/add_favorites', to: 'bikes#add_favorites', as: :add_to_favorites_page
+    post '/add_favorites', to: 'bikes#favorites', as: :add_favorites_page
 
 # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

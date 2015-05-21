@@ -28,3 +28,10 @@
 # ignore tempfiles from Vim and gedit
 *~
 *.sw?
+
+#ignore mailer password files
+/config/email.yml
+/config/initializers/setup_mail.rb
+
+# ignore database schema
+/db/schema.rb

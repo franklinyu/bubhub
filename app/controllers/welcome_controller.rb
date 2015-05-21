@@ -1,9 +1,10 @@
 class WelcomeController < ApplicationController
+
 	def index
     @hilite = "index"
 		render
 	  flash[:notice]
-  end
+    end
 
 	def join
     @hilite = "join"
@@ -35,6 +36,28 @@ class WelcomeController < ApplicationController
 		render
 	end
 
+    def contact_us_email_form
+      @message_params = params[:email_form]
+      request.env['HTTP_REFERER'] ||= root_page_path
+
+      if @message_params.nil? or
+          @message_params[:name].blank? or
+          @message_params[:email].blank? or
+          @message_params[:message].blank?
+        flash[:error] = "Please fill in Name, Email, and Message field"
+        redirect_to contact_us_page_path and return
+      elsif !@message_params[:fellforit].blank?
+        flash[:error] = "Email not sent. Are you a human?"
+        redirect_to contact_us_page_path and return
+      elsif UserMailer.contact_us_email(@message_params).deliver
+        flash[:notice] = "Your message has been sent successfully!"
+        redirect_to contact_us_page_path and return
+      else
+        flash[:error] = "Your message hasn't been sent"
+        redirect_to contact_us_page_path and return
+      end
+    end
+
   def bike_shop
     @hilite = "info"
     render
@@ -45,8 +68,34 @@ class WelcomeController < ApplicationController
     render
   end
 
-  def sign_in
-    #@user = User.find params[:id]
-    render
+  def valid_user
+    path = sign_in_page_path
+    @user_list = User.all
+    email = params[:user][:email]
+    pw = params[:user][:pin]
+    session[:email] = email
+    params.permit!
+    @user_list.each do |u|
+      if email == u[:email] and pw == u[:pin]
+        path = valid_user_page_path
+        session[:first_name] = u[:first_name]
+        session[:last_name] = u[:last_name]
+        return
+      else
+        flash[:notice] = "Your username or password was incorrect. Try again."
+        path = sign_in_page_path
+      end
+    end
+    redirect_to path and return
+  end
+
+  def failure
+    flash[:notice] = "Your username or password was incorrect. Try again."
+#redirect_to sign_in_page_path
   end
 end
+
+
+
+
+
