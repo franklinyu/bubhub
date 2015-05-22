@@ -1,7 +1,5 @@
 require 'spec_helper'
-
 describe BikeRacksController do
-
   describe "POST #create" do
     context "with valid attributes" do
       it "saves the new rack in the database" do
