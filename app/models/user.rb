@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   validates_presence_of :bu_id
   validates_uniqueness_of :bu_id
 
+  validates_uniqueness_of :assigned_bike
+  validates_presence_of :total_ride_time
+  validates_presence_of :total_number_of_rides
+
 end
