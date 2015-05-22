@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get '/bike_shop_info', to: 'welcome#bike_shop_info', as: :bike_shop_info_page
   get '/how_it_works', to: "welcome#how_it_works", as: :how_it_works_page
 
+  Rails.application.routes.draw do
+    resources :report
+  end
+
   get '/valid_user', to: "welcome#valid_user", as: :valid_user_page
 #post '/', to: "user#create", as: :new_user_page  
 	# Example of regular route:
@@ -25,6 +29,7 @@ Rails.application.routes.draw do
   get '/manage_account/:id', to: "accounts#manage_account", as: :manage_account_page
   put '/update_user/:id', to: "accounts#update", as: :update_user
   post '/contact_us', to: "welcome#contact_us_email_form", as: :contact_us_email_form_page
+
   # Example of regular route:
   get '/sign_in', to: "welcome#sign_in", as: :sign_in_page
   get '/invalid_user', to: "welcome#invalid_user", as: :invalid_user_page
@@ -74,6 +79,8 @@ Rails.application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
+
+  
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
