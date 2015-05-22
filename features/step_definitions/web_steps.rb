@@ -68,7 +68,7 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
   end
 end
 
-Then /^I whould see id "([^\"]*)"$/ do |id|
+Then /^I should see id "([^\"]*)"$/ do |id|
   page.should have_css(id)
 end
 
