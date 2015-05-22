@@ -5,11 +5,8 @@ require 'rspec/rails'
 require 'factory_girl'
 require 'factory_girl_rails'
 require 'capybara/rspec'
-<<<<<<< HEAD
 require 'simplecov'
 SimpleCov.start 'rails'
-=======
->>>>>>> 3f426fb2b56209806cf92069462c913ae503eee3
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
