@@ -1,0 +1,26 @@
+body{
+	padding: 20px;
+}
+
+.error_message{
+	background-color: red;
+	color: yellow;
+	text-align: center;
+}
+
+.text {
+        width: 500px;
+        clear: both;
+    }
+.text input {
+        width: 100%;
+        clear: both;
+    }
+
+.register{
+  visibility: hidden;
+}
+
+#I_Accept:checked ~ .register{
+  visibility: visible;
+}

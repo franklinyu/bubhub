@@ -1,0 +1,8 @@
+%h2 Check out
+
+%p Bike No.
+  = @bike.bike_id
+
+= form_tag check_out_bike_path, method: :post do
+  = date_select :bike, :return_on
+  = submit_tag 'Check out'

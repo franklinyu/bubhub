@@ -1,0 +1,31 @@
+.container-fluid
+%h2 Edit bike
+= form_tag bike_edited_page_path, :method => :post, :action => "update" do
+	%h3 Bike:
+	%br 
+	= label :bike, :bike_id, 'id'
+	= text_field :bike, :bike_id
+	*
+	%br
+	%h3 Details:
+	%br
+	= label :bike, :newID, 'new id'
+	= text_field :bike, :newID
+	%br
+	= label :bike, :bike_serial_num, 'serial #'
+	= text_field :bike, :bike_serial_num
+	%br
+	= label :bike, :bike_height, 'height (in)'
+	= text_field :bike, :bike_height
+	%br
+	= label :bike, :bike_description, 'description'
+	= text_field :bike, :bike_description
+	%br
+	=submit_tag "Update", :controller => "bike", :action => "update", :method => "put", :class => "bike_edited"
+
+%div
+	-if flash[:error]
+		=flash[:error]
+%br 
+%br 
+%br 

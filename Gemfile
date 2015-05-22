@@ -31,11 +31,22 @@ gem 'spring',        group: :development
 #Use Haml for views
 gem 'haml'
 
+
+gem "recaptcha", require: "recaptcha/rails", github: "ambethia/recaptcha"
+
 group :test do
   gem 'capybara' # Simulates user actions for cucumber
   gem 'cucumber-rails', :require => false # Cucmber features
-  gem 'rspec-rails', '~> 2.99'
   gem 'database_cleaner'  # Provides strategies for cleaning up the test db after test runs
+  gem 'rspec-rails', '~> 2.99.0'  #Stick to a pre 3.x version for learning experience
+  gem 'factory_girl_rails'
+  gem 'faker'
+
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.99.0'  #Stick to a pre 3.x version for learning experience
+  gem 'debugger' # debug in Cucumber, RSpec and controller
 end
 
 group :production do

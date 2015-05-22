@@ -56,12 +56,8 @@ When /^(?:|I )choose "([^"]*)"$/ do |field|
   choose(field)
 end
 
-When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |arg1, arg2|
-  fill_in arg1, :with => arg2
-end
-
-When /^(?:|I )click on "(.*?)"$/ do |arg1|
-  pending
+When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|
+  fill_in(field, :with=>value)
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
@@ -112,4 +108,26 @@ Then(/^bike should be marked out for maintenence$/) do
   bike.setOutForMaintence
 end
 
+Given(/^I am on \/add_a_rack$/) do
+  visit(add_a_rack) # express the regexp above with the code you wish you had
+end
 
+Then /^the checkbox "(.+)" should be unchecked$/ do |checkbox|
+  find_field(checkbox)[:value].should eq "false"
+end
+
+Then /^I should see the "(.+)" button$/ do |button|
+  should have_button button
+end
+
+
+Then /^I should not see the "(.+)" button$/ do |button|
+  should_not have_button button
+end
+
+When /^I fill out the form with:$/ do |table|
+  puts table.rows_hash
+  criteria = table.rows_hash.each do |field, value|
+    fill_in field, :with => value
+  end
+end
