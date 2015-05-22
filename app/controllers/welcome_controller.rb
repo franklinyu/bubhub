@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  helper_method :valid_users
 
 	def index
     @hilite = "index"
@@ -91,8 +92,11 @@ class WelcomeController < ApplicationController
 
   def failure
     flash[:notice] = "Your username or password was incorrect. Try again."
-#redirect_to sign_in_page_path
   end
+
+  def valid_users(user)
+  end
+
 end
 
 
