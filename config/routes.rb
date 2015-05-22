@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   put '/update_user/:id', to: "accounts#update", as: :update_user
   post '/contact_us', to: "welcome#contact_us_email_form", as: :contact_us_email_form_page
 
+  get '/userpanel', to: 'users#userpanel', as: :user_panel_page
   # Example of regular route:
   get '/sign_in', to: "welcome#sign_in", as: :sign_in_page
   get '/invalid_user', to: "welcome#invalid_user", as: :invalid_user_page
