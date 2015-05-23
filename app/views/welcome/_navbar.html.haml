@@ -45,8 +45,9 @@
             %li
               =link_to "Information", bike_shop_info_page_path
             %li
-              %a{:href=>"#"} Request Repair Help
-        %li.dropdown
+              =link_to "Request Repair Help", make_appointments_page_path
+            %li
+              =link_to "View Appointments", view_appointments_month_page_path        %li.dropdown
           %a{:href => "#", :class=>"dropdown-toggle", "data-toggle" =>"dropdown", :role=>"button", "aria-expanded" => "false"}
             Account Options
             %span.carat
