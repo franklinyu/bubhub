@@ -35,3 +35,6 @@
 
 # ignore database schema
 /db/schema.rb
+
+# ignore coverage report
+/coverage/
