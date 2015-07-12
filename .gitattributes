@@ -1,0 +1,15 @@
+* text=auto
+
+*.html.haml text
+*.html.erb text
+*.yml text
+*.feature text
+Gemfile text
+Gemfile.lock text
+*.rake text
+Rakefile text
+*.rdoc text
+
+*.eot binary
+*.ttf binary
+*.woff binary
