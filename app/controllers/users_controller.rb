@@ -37,11 +37,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-<<<<<<< HEAD
-    params.require(:user).permit(:firstName, :lastName, :bMail, :BNumber, :pin, :phoneNumber, :BUCardNumber)
-=======
-    params.require(:user).permit(:first_name, :last_name, :email, :bu_id, :pin, :assigned_bike, :total_ride_time, :total_number_of_rides)
->>>>>>> 37f357854aa84a214a5fd46877c6726104d1bc7f
+   params.require(:user).permit(:first_name, :last_name, :email, :bu_id, :pin, :assigned_bike, :total_ride_time, :total_number_of_rides)
   end
 
   def register
