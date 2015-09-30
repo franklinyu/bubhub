@@ -44,8 +44,8 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.99.0'  #Stick to a pre 3.x version for learning experience
   gem 'byebug'
+  gem 'debugger' # debug in Cucumber, RSpec and controller
 end
 
 group :production do
